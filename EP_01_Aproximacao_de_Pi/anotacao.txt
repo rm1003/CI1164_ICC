@@ -1,0 +1,34 @@
+    O trabalho consiste em fazer uma aproximação com o valor PI,
+utilizando formula da somatória para aproximar.
+Deve ser implementado de forma:
+    - eficiente: questão de tempo e precisão 
+    - analisar erros do método utilizado.
+
+O programa:
+    - Deve chamar pi.c
+    - Entrda: stdin double (representa a tolerância)
+    - Obter aproximação de PI com erro absoluto aproximado
+(diferença entre a aproximação obtida na última iteração 'N'
+e iteração anterior 'N-1') sendo no máximo esta tolerância
+    - Deve imprimir na tela: 
+        - qtd_iteração N
+        - Erro absoluto aproximado
+        - Erro absoluto 'exato' (Comparar com M_PI (math.h))
+    - Para análise dos erros da representação numérica:
+        - Arredondar para baixo
+        - Arredondar para cima
+    - Usando dunção fasetround para arredondar
+
+    - Valores devem ser impressos com notação científica 15
+dígitos e com hexadecimal
+
+Resumo da saída, exemplo:
+Entrada:
+    1e-15
+Saída:
+    50                                      -> N
+    8.881784197001253e-16 3CD0000000000000  -> Erro absoluto
+    1.199040866595170e-14 3D0B000000000000  -> Erro absoluto 'exato'
+    3.141592653589783e+00 400921FB54442D01  -> Pi a. para baixo
+    3.141592653589806e+00 400921FB54442D33  -> Pi a. para cima
+    49                                      -> ULPs
