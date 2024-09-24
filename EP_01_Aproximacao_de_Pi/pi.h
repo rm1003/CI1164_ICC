@@ -23,9 +23,7 @@ typedef union{
     int64_t hexa;
 } DOUBLE_HEXA;
 
-void arredondar (double valor);
-
-double somatoria (double tolerancia, ll *count);
+double somatoria (double tolerancia, ll *count, int mode);
 
 void aproxima_pi (double tolerancia);
 
