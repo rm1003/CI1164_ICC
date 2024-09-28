@@ -2,56 +2,71 @@
 
 
 double somatoria (double tolerancia, ll *count, int mode) {
+
     ll it = 0;
-    
-    double pow_2k = 1; // 2^k
+    ll two_it = 0;
+    ull pow_2k = 1; // 2^k
+
     double fat_k = 1; // k!
     double fat_Denominador = 1; // (2k + 1)!
     double sum = 0.0;
-    double termo, pi_anterior, diff;
+    double pi_anterior, diff;
+
+    tolerancia /= 2; // 1 operacao de double
 
     DOUBLE_HEXA diference, pi;
 
     do {
-        termo = ((pow_2k*fat_k*fat_k) / fat_Denominador); // 3 operacoes
         pi_anterior = sum;
-        sum += termo; // 1 operacao
-        it++;
-        fat_k *= it; // 1 operacao
-        pow_2k *= 2; // 1 operacao
-        fat_Denominador *= ((2*it) * ((2*it) + 1)); // 5 operacoes
-        diff = fabs(sum - pi_anterior)*2; // 3 operacoes
-        (*count) += 10;
-        // total 14 operacoes dentro do loop
-    } while (diff >= tolerancia);
+        sum += ((pow_2k*fat_k*fat_k) / fat_Denominador); // 4 operacoes de double
+
+        it++; // operacao de long long
+
+        fat_k *= it; // 1 operacao de double
+        pow_2k *= 2; // operacao de unsigned long long
+
+        two_it = 2*it; // operacao de long long
+        fat_Denominador *= (two_it * (two_it + 1)); // 1 operacao de double
+
+        diff = ABS(sum, pi_anterior); // 1 operacao de double 
+
+        // Contagem apenas no arredondamento para cima
+        if (mode != 0) (*count) += 7;
     
+        // total 7 operacoes dentro do loop
+    } while (diff >= tolerancia);
+
+    sum *= 2; // 1 operacoes
+
     if (mode != 0) {
         // Erros
-        diference.value = diff;
-        pi.value = fabs((sum*2) - M_PI); // 3 operacoes
+        diference.value = diff*2; // 1 operacao de double
+        pi.value = ABS(sum, M_PI); // 1 operacoes de double
+        
         printf("%lld\n", it);
         printf("%.15e %lX\n", diference.value, diference.hexa);
-        printf("%.15e %lX\n", fabs((sum*2) - M_PI), pi.hexa); // 3 operacoes
-        (*count) += 6; // dentro do if sao 6 operacoes
+        printf("%.15e %lX\n", pi.value, pi.hexa);
+
+        (*count) += 4; // dentro do if + sum*2 + tolerancia/2 sao 4 operacoes
     }
-    //printf("%.15e\n", sum*2);
-    return sum*2;
+
+    return sum;
 }
 
 void aproxima_pi (double tolerancia) {
 
     DOUBLE_HEXA hex_baixo, hex_cima;
     ll count = 0, ulps = 0;
-    double pi_aproximado_baixo, pi_aproximado_cima;
 
+    // Aproximacao para baixo
     fesetround(FE_DOWNWARD);
-    pi_aproximado_baixo = somatoria(tolerancia, &count, 0);
+    hex_baixo.value = somatoria(tolerancia, &count, 0);
+
+    // Aproximacao para cima
     fesetround(FE_UPWARD);
-    pi_aproximado_cima = somatoria(tolerancia, &count, 1);
+    hex_cima.value = somatoria(tolerancia, &count, 1);
 
     // Valor aproximado
-    hex_baixo.value = pi_aproximado_baixo;
-    hex_cima.value = pi_aproximado_cima;
     printf("%.15e %lX\n", hex_baixo.value, hex_baixo.hexa);
     printf("%.15e %lX\n", hex_cima.value, hex_cima.hexa);
 
@@ -59,8 +74,7 @@ void aproxima_pi (double tolerancia) {
     ulps = ABS(hex_cima.hexa, hex_baixo.hexa);
     printf("%lld\n", ulps);
 
-    // Concertando o count
-    count++;
+    // FLOPs
     printf("%lld\n", count);
     return;
 }
@@ -72,7 +86,7 @@ int main() {
         perror("Entrada invalida!\n");
         return 1;
     }
-    // printf("entrada = %.15e\n", entrada);
+
     aproxima_pi(entrada);
     return 0;
 }
