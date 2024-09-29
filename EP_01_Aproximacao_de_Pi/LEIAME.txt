@@ -1,0 +1,17 @@
+Ruibin Mei - GRR20232358
+
+Limitações do programa:
+    1 - Ao inserir valor 0 na entrada como tolerância, ele entra em um laço infinito 
+no do-while da somatória, isso ocorre pelo fato da condição (diff >= tolerancia), sendo
+assim, a diferença entre o valor aproximado com o seu anterior dificilmente chegará a
+ser menor que tolerancia (no caso 0) a não ser que ocorra overflow ou underflow o que
+pode acarretar em casos inesperados, desta forma, foi feito uma verificação na entrada
+para que não seja inserido o valor 0.
+    2 - Ao inserir valor menor que 1e-15 o programa não consegue representar os erros
+adequadamente, devido a precisão limitada de ponto flutuante (double suporta 15 casas
+decimais), sendo assim, valor menor que 15 casas decimais causa resultados não adequados
+para análise, o que excede da precisão do tipo double (underflow). Também foi feito uma
+verificação na entrada para que não seja inserido algum valor menor que 1e-15.
+    3 - Eventualmente se o tipo double fosse trocado para um tipo , possivelmente
+pode ocorrer overflow em operações de fatoriais e de potência de 2, na qual elas crescem
+rapidamente.

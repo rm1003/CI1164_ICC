@@ -86,6 +86,10 @@ int main() {
         perror("Entrada invalida!\n");
         return 1;
     }
+    if (entrada <= 1e-16) {
+        perror("Entrada invalida!\n");
+        return 2;
+    }
 
     aproxima_pi(entrada);
     return 0;
