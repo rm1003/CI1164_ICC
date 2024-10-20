@@ -1,6 +1,6 @@
 # PROGRAMA
     PROG = inversa
-	ARQUIVOS = inversa.c utils.c sl.c io.c
+	ARQUIVOS = inversa.c utils.c sl.c io.c lu.c
     OBJS = $(ARQUIVOS:.c=.o)
 
 # Compilador

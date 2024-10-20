@@ -2,9 +2,12 @@
 
 // Coloca os valores na matriz inicial A
 void input (PSISTEMA_LINEAR sistema) {
-    for (int i = 0; i < sistema->ordem; ++i) {
-        for (int j = 0; j < sistema->ordem; ++j) {
-            scanf("%lf", &sistema->mA[i][j]);
+    ll n = sistema->ordem;
+    double x;
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            scanf("%lf", &x);
+            sistema->matriz.mA[i][j] = x;
         }
     }
     return;
@@ -22,11 +25,11 @@ void output_inverse (PSISTEMA_LINEAR sistema) {
     return;
 }
 
-// Para teste de se mem_set funciona ou nao
+// Fucao para debug -> teste se mem_set funciona ou nao
 void output (PSISTEMA_LINEAR sistema) {
     for (int i = 0; i < sistema->ordem; ++i) {
         for (int j = 0; j < sistema->ordem; ++j) {
-            printf("%.15e ", sistema->mIdentidade[i][j]);
+            printf("%lf ", sistema->mAInversa[i][j]);
         }
         printf("\n");
     }

@@ -6,11 +6,17 @@
 #include "defines.h"
 
 typedef struct {
-    double **mA; // Matriz A
+    // Matriz LU tudo junto para gastar menos memoria
+    union {
+        double **mA;
+        double **U;
+        double **L;
+    }matriz;
+
+    double **y; // Matriz auxiliar Y
     double **mAInversa; // Matriz Inversa de A
-    double **U;
-    double **L;
     double **mIdentidade; // Matriz Identidade
+    double residuoL2; // Valor do residuo de norma L2
     ll ordem;
 }sistema_linear;
 typedef sistema_linear SISTEMA_LINEAR, *PSISTEMA_LINEAR;

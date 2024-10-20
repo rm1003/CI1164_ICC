@@ -6,5 +6,9 @@
 #include "defines.h"
 #include "sl.h"
 
+void identidade (PSISTEMA_LINEAR sistema);
+void fat_LU (PSISTEMA_LINEAR sistema);
+void solve (PSISTEMA_LINEAR sistema);
+
 
 #endif /* lu.h */
