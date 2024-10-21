@@ -112,6 +112,7 @@ void fat_LU (PSISTEMA_LINEAR sistema) {
 // Resolve a matriz inversa usando o Método da Fatoração LU com pivoteamento parcial
 void solve (PSISTEMA_LINEAR sistema) {
     ll n = sistema->ordem;
+    // Inicio da medicao de tempo
     sistema->tempo = timestamp();
 
     fat_LU(sistema);
@@ -139,6 +140,7 @@ void solve (PSISTEMA_LINEAR sistema) {
             }
         }
     }
+    // Medindo tempo para calcular a matriz inversa
     sistema->tempo = timestamp() - sistema->tempo;
     ordena_matriz(sistema);
     return;

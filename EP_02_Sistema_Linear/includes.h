@@ -13,6 +13,7 @@
 #include <fenv.h>
 #include <math.h>
 #include <string.h>
+#include <likwid.h>
 #include "utils.h"
 #include "defines.h" // Biblioteca dos defines
 #include "io.h" // Biblioteca de entrada e saida
