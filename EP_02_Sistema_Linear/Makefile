@@ -1,3 +1,10 @@
+#########################################
+#   Ruibin Mei							#
+#   GRR20232358							#
+#										#
+#   Makefile							#
+#########################################
+
 # PROGRAMA
     PROG = inversa
 	ARQUIVOS = inversa.c utils.c sl.c io.c lu.c
