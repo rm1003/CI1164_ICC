@@ -17,8 +17,16 @@ int main () {
     PSISTEMA_LINEAR sistema = init_system(n);
     input(sistema);
 
+    LIKWID_MARKER_INIT;
+    printf("/inicio\n");
+    LIKWID_MARKER_START("marker");
+
     fesetround(FE_DOWNWARD);
     solve(sistema);
+
+    LIKWID_MARKER_STOP("marker");
+    LIKWID_MARKER_CLOSE;
+
     residuo(sistema);
 
     output_inverse(sistema);
@@ -26,5 +34,6 @@ int main () {
     printf("%.15Le\n", sistema->residuoL2);
     printf("%.8Le\n", sistema->tempo);
     free_SL(sistema);
+    printf("/fim\n");
     return 0;
 }
