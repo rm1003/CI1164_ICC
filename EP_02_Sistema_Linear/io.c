@@ -10,10 +10,10 @@
 // Faz leitura dos valores na matriz inicial A
 void input (PSISTEMA_LINEAR sistema) {
     ll n = sistema->ordem;
-    long double x;
+    double x;
     for (ll i = 0; i < n; ++i) {
         for (ll j = 0; j < n; ++j) {
-            scanf("%Lf", &x);
+            scanf("%lf", &x);
             sistema->matriz.mA[i][j] = x;
             sistema->mOriginal[i][j] = x;
         }
@@ -27,7 +27,7 @@ void output_inverse (PSISTEMA_LINEAR sistema) {
     printf("%lld\n", sistema->ordem);
     for (ll i = 0; i < sistema->ordem; ++i) {
         for (ll j = 0; j < sistema->ordem; ++j) {
-            printf("%.15Le ", sistema->mAInversa[i][j]);
+            printf("%.15e ", sistema->mAInversa[i][j]);
         }
         printf("\n");
     }
@@ -38,7 +38,7 @@ void output_inverse (PSISTEMA_LINEAR sistema) {
 void output (PSISTEMA_LINEAR sistema) {
     for (int i = 0; i < sistema->ordem; ++i) {
         for (int j = 0; j < sistema->ordem; ++j) {
-            printf("%Lf ", sistema->mIdentidade[i][j]);
+            printf("%lf ", sistema->mIdentidade[i][j]);
         }
         printf("\n");
     }

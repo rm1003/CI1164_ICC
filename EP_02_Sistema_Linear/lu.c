@@ -10,7 +10,7 @@
 
 // Faz a troca das linhas da matriz inversa
 void swap_inverse (PSISTEMA_LINEAR sistema, ll a, ll b) {
-    long double *aux;
+    double *aux;
     // Inverte a matriz inversa para posicao correta
     aux = sistema->mAInversa[a];
     sistema->mAInversa[a] = sistema->mAInversa[b];
@@ -41,7 +41,7 @@ void ordena_matriz (PSISTEMA_LINEAR sistema) {
 
 // Troca das linhas da matriz principál e identidade 
 void swap (PSISTEMA_LINEAR sistema, int a, int b) {
-    long double *aux;
+    double *aux;
     ll tmp;
     // Troca das linhas da matriz original
     aux = sistema->matriz.mA[a];
@@ -60,7 +60,7 @@ void swap (PSISTEMA_LINEAR sistema, int a, int b) {
 
 // Acha o maior valor para pivoteamento e faz a troca das linhas
 void max_swap (PSISTEMA_LINEAR sistema, int atual) {
-    long double maior = fabs(sistema->matriz.mA[atual][atual]);
+    double maior = fabs(sistema->matriz.mA[atual][atual]);
     ll i, i_maior = atual;
     // Acha o maior valor para pivoteamento parcial
     for (i = atual + 1; i < sistema->ordem; ++i) {
@@ -86,7 +86,7 @@ void init_identidade (PSISTEMA_LINEAR sistema) {
 
 // Gera as matrizes LU
 void fat_LU (PSISTEMA_LINEAR sistema) {
-    long double m;
+    double m;
     ll n = sistema->ordem;
     init_identidade(sistema);
     for (ll i = 0; i < n; ++i) {
@@ -148,7 +148,7 @@ void solve (PSISTEMA_LINEAR sistema) {
 
 // Calcula o residuo de norma L2
 void residuo (PSISTEMA_LINEAR sistema) {
-    long double r_atual = 0.0, r_quadrado, r_final = 0.0, soma;
+    double r_atual = 0.0, r_quadrado, r_final = 0.0, soma;
 
     ll n = sistema->ordem;
     // R = A.AI - I

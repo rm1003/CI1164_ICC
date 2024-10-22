@@ -16,21 +16,21 @@
 typedef struct {
     // Matriz LU tudo junto para gastar menos memoria
     union {
-        long double **mA;
-        long double **U;
-        long double **L;
+        double **mA;
+        double **U;
+        double **L;
     } matriz;
 
-    long double **mOriginal; // Matriz original para fazer calculo do residuo
+    double **mOriginal; // Matriz original para fazer calculo do residuo
 
-    long double **y; // Matriz auxiliar Y no calculo de UX = Y
-    long double **mAInversa; // Matriz Inversa de A
-    long double **mIdentidade; // Matriz Identidade
+    double **y; // Matriz auxiliar Y no calculo de UX = Y
+    double **mAInversa; // Matriz Inversa de A
+    double **mIdentidade; // Matriz Identidade
 
     ll *mask; // Vetor auxiliar para ordem das linhas no pivoteamento
 
-    long double tempo; // Variavel para guardar o tempo no calculo da inversa
-    long double residuoL2; // Valor do residuo de norma L2
+    double tempo; // Variavel para guardar o tempo no calculo da inversa
+    double residuoL2; // Valor do residuo de norma L2
     ll ordem; // Ordem da matriz
 }sistema_linear;
 typedef sistema_linear SISTEMA_LINEAR, *PSISTEMA_LINEAR;

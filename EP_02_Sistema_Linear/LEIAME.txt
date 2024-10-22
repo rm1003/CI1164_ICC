@@ -1,0 +1,124 @@
+LEIAME - Trabalho EP-02 - Sistemas Lineares
+
+
+Informações:
+    - Nome: Ruibin Mei
+    - GRR: 20232358
+
+
+Descrição:
+    - O programa calcula a matriz inversa da matriz de entrada mA de ordem "nxn" utilizando método
+    de fatoração LU junto com pivoteamento parcial.
+
+
+Descrição das funções:
+inversa.c
+-> main.c:
+    Apenas faz a chamada das funções na qual faz o calculo, ou seja, a parte principal do programa.
+
+io.c
+-> input:
+    A função faz a leitura de dados para matriz principal mA.
+    Recebe como parâmetro PSISTEMA_LINEAR que é a estrutuda de dados que contém as matrizes.
+
+-> output_inverse:
+    A função imprime na tela os dados pedidos no trabalho.
+    Recebe como parâmetro PSISTEMA_LINEAR contendo todas as matrizes.
+
+-> output:
+    A função que imprime na tela os dados da matriz, utilizado para debug do código.
+    Recebe como parâmetro PSISTEMA_LINEAR contendo todas as matrizes.
+
+lu.c
+-> swap_inverse:
+    A função faz a troca das linhas da matriz inversa e da identidade, e é chamado pela função ordena_matriz.
+    Recebe como parâmetro PSISTEMA_LINEAR contendo todas as matrizes e 'a' e 'b' indicando as linhas a ser
+    trocadas.
+
+-> ordena_matriz:
+    A função faz a ordenação da matriz inversa gerada pelo método de fatoração LU com pivoteamento parcial.
+    Recebe como parâmetro PSISTEMA_LINEAR contendo todas as matrizes.
+
+-> swap:
+    A função faz a troca das linhas da matriz principal, identidade e vetor de máscara, sendo utilizado no
+    pivoteamento parcial, e é chamada pela função max_swap.
+    Recebe como parâmetro PSISTEMA_LINEAR contendo todas as matrizes e 'a' e 'b' indicando as linhas a ser
+    trocadas.
+
+-> max_swap:
+    A função acha o maior pivô na coluna na qual vai ser feito eliminação de guass e faz a troca das linhas.
+    Recebe como parâmetro PSISTEMA_LINEAR contendo todas as matrizes e inteiro atual indicando a linha atual 
+    do pivô.
+
+-> init_identidade:
+    A função inicializa os valores da matriz identidade;
+    Recebe como parâmetro PSISTEMA_LINEAR contendo todas as matrizes.
+
+-> fat_LU:
+    A função gera as matrizes L e U do método de fatoração LU, e eles são guardadas na mesma matriz mA, para
+    economia de memória, além disso, é usado aqui o pivoteamento parcial para fazer a eliminação de guass.
+    Recebe como parâmetro PSISTEMA_LINEAR contendo todas as matrizes.
+
+-> solve:
+    A função resolve o sistema linear para achar os coeficientes da matriz inversa de A.
+    Recebe como parâmetro PSISTEMA_LINEAR contendo todas as matrizes.
+
+-> resiuo:
+    A função calcula o resíduo da norma L2 (R = A.AI - I) coluna por coluna e fazendo a média simples como
+    foi pedido no trabalho.
+    Recebe como parâmetro PSISTEMA_LINEAR contendo todas as matrizes.
+
+sl.c
+-> mem_set:
+    A função preenche todas matrizes com valor 0.0.
+    Recebe como parâmetro PSISTEMA_LINEAR contendo todas as matrizes.
+
+-> init_system:
+    A função faz inicialização de todas as matrizes, ou seja, faz o alocação de memória para todo mundo.
+    Recebe como parâmetro PSISTEMA_LINEAR contendo todas as matrizes.
+
+-> free_SL:
+    A função libera memória de todas matrizes alocados no init_system.
+    Recebe como parâmetro PSISTEMA_LINEAR contendo todas as matrizes.
+
+utils.c
+-> timestamp
+    A função pega o tempo atual do relógio.
+
+
+Descrição da Estrutura de Dados:
+    A estrutura contém:
+        - union matriz: guarda a matriz inicialmente principal(mA) depois para LU, isso no mesmo espaço
+        para economizar memória.
+        - mOriginal: guarda a matriz principal(mA) no estado inicial para cálculo do resíduo.
+        - y: matriz y é utilizado para guardar os resultados no cálculo LY = B.
+        - mAInversa: guarda a matriz inversa obtida.
+        - mIdentidade: guarda a matriz identidade.
+        - mask: utilizado para saber qual a posição inicial das linhas da matriz mA.
+        - tempo: guarda o tempo para cálcular a matriz inversa.
+        - residuoL2: guarda o valor do resíduo cálculado.
+        - ordem: guarda a ordem da matriz.
+
+
+Possíveis erros:
+    - Um dos erros é entrada da ordem da matriz como 0, na qual é tratado com um IF na main, para evitar matriz
+    de tamanho 0.
+    - Entradas igual a 0.0, o que resulta em divisão por 0 no programa. Mas isso é tratado com IF garantindo que
+    não ocorra divisão por 0.
+    - Erro de overflow nas multiplicações e somas de double, para valores muito grandes.
+    - Erros de precisão nas contas feitas com double(float points).
+
+
+Explicação do algoritmo:
+    O algoritmo chama na main a função 'solve' passando no parâmetro a estrutura de dados inicializados com a
+função init_system. Na função solve é chamado a função 'fat_LU', onde faz todo o processo de fatoração LU,
+dividindo a matriz mA nas matrizes L (contendo os valores dos multiplicadores utilizados na eliminação de guass)
+e U (contendo os valores dos coeficientes resultantes da eliminação), ambas L e U, são guardadas no mesmo
+lugar, pois a matriz U fica na parte da diagonal principal para cima e a matriz L fica da matriz diagonal
+para baixo, assim, podendo compartilhar o mesmo espaço da matriz, e é o que faz para economizar memória.Além
+da fatoração, é feito em paralelo neste processo utilizando o pivoteamento parcial na eliminação de gauss, para
+garantir a estabilidade numérica da decomposição. E é utilizado o vetor 'mask' para guardar a posição inicial
+das linhas e eventualmente no resultado obtida (matriz inversa) poder deixar na ordem que deveria ficar.
+    Após a execução de 'fat_LU', é executado um loop na qual faz as contas de LY = B e UX = Y, igual no método
+de fatoração LU, em outras palavras, faz o cálculo da matriz inversa utilizando o método de fatoração LU nesta
+parte do programa.

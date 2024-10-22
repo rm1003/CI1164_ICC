@@ -14,7 +14,7 @@
     CC     = gcc
 
 # Acrescentar onde apropriado as opções para incluir uso da biblioteca LIKWID
-    CFLAGS = -O0 -DLIKWID_PERFMON -I${LIKWID_INCLUDE}
+    CFLAGS = -DLIKWID_PERFMON -I${LIKWID_INCLUDE} -O0
     LFLAGS = -lm -llikwid
 
 # Lista de arquivos para distribuição. Acrescentar mais arquivos se necessário.

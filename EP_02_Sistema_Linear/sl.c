@@ -12,11 +12,11 @@
 // Coloca valor 0.0 em todas matrizes
 void mem_set (PSISTEMA_LINEAR sistema) {
     for (int i = 0; i < sistema->ordem; ++i) {
-        memset(sistema->matriz.mA[i], 0.0, sistema->ordem * sizeof(long double));
-        memset(sistema->mOriginal[i], 0.0, sistema->ordem * sizeof(long double));
-        memset(sistema->y[i], 0.0, sistema->ordem * sizeof(long double));
-        memset(sistema->mAInversa[i], 0.0, sistema->ordem * sizeof(long double));
-        memset(sistema->mIdentidade[i], 0.0, sistema->ordem * sizeof(long double));
+        memset(sistema->matriz.mA[i], 0.0, sistema->ordem * sizeof(double));
+        memset(sistema->mOriginal[i], 0.0, sistema->ordem * sizeof(double));
+        memset(sistema->y[i], 0.0, sistema->ordem * sizeof(double));
+        memset(sistema->mAInversa[i], 0.0, sistema->ordem * sizeof(double));
+        memset(sistema->mIdentidade[i], 0.0, sistema->ordem * sizeof(double));
     }
     return;
 }
