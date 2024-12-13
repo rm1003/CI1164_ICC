@@ -1,0 +1,59 @@
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.41 GHz
+--------------------------------------------------------------------------------
+512 8.6251292810e+03 1.0776955402e+02
+--------------------------------------------------------------------------------
+STRUCT,Info,3
+CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
+CPU type:,Intel Coffeelake processor,
+CPU clock:,3.407907333 GHz,
+TABLE,Region montaSL,Group 1 Raw,FLOPS_DP,6
+Region Info,Core 3,
+RDTSC Runtime [s],8.625221,
+call count,1,
+Event,Counter,Core 3
+INSTR_RETIRED_ANY,FIXC0,73932090000
+CPU_CLK_UNHALTED_CORE,FIXC1,32519930000
+CPU_CLK_UNHALTED_REF,FIXC2,29236720000
+FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE,PMC0,0
+FP_ARITH_INST_RETIRED_SCALAR_DOUBLE,PMC1,29074890000
+FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE,PMC2,0
+TABLE,Region montaSL,Group 1 Metric,FLOPS_DP,9
+Metric,Core 3,
+Runtime (RDTSC) [s],8.6252,
+Runtime unhalted [s],9.5425,
+Clock [MHz],3790.6067,
+CPI,0.4399,
+DP MFLOP/s,3370.9154,
+AVX DP MFLOP/s,0,
+Packed MUOPS/s,0,
+Scalar MUOPS/s,3370.9154,
+Vectorization ratio,0,
+STRUCT,Info,3
+CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
+CPU type:,Intel Coffeelake processor,
+CPU clock:,3.407907333 GHz,
+TABLE,Region resolveSL,Group 1 Raw,FLOPS_DP,6
+Region Info,Core 3,
+RDTSC Runtime [s],0.107771,
+call count,1,
+Event,Counter,Core 3
+INSTR_RETIRED_ANY,FIXC0,528991100
+CPU_CLK_UNHALTED_CORE,FIXC1,405246900
+CPU_CLK_UNHALTED_REF,FIXC2,364342300
+FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE,PMC0,500500
+FP_ARITH_INST_RETIRED_SCALAR_DOUBLE,PMC1,3003518
+FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE,PMC2,166541500
+TABLE,Region resolveSL,Group 1 Metric,FLOPS_DP,9
+Metric,Core 3,
+Runtime (RDTSC) [s],0.1078,
+Runtime unhalted [s],0.1189,
+Clock [MHz],3790.5121,
+CPI,0.7661,
+DP MFLOP/s,6218.4565,
+AVX DP MFLOP/s,6181.2989,
+Packed MUOPS/s,1549.9688,
+Scalar MUOPS/s,27.8694,
+Vectorization ratio,98.2337,

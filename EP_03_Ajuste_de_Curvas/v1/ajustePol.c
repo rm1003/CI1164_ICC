@@ -4,7 +4,7 @@
 #include <fenv.h>
 #include <math.h>
 #include <stdint.h>
-#include "likwid.h"
+#include <likwid.h>
 #include "utils.h"
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -94,7 +94,7 @@ int main() {
     double *b = (double *) malloc(sizeof(double)*n);
     double *alpha = (double *) malloc(sizeof(double)*n); // coeficientes ajuste
 
-    LIKWID_MARKER_START ("marker");
+    LIKWID_MARKER_START ("montaSL");
 
 
     // (A) Gera SL
@@ -102,24 +102,28 @@ int main() {
     montaSL(A, b, n, p, x, y);
     tSL = timestamp() - tSL;
 
+    LIKWID_MARKER_STOP ("montaSL");
+
+    LIKWID_MARKER_START ("resolveSL");
+
     // (B) Resolve SL
     double tEG = timestamp();
     eliminacaoGauss(A, b, n); 
     retrossubs(A, b, alpha, n); 
     tEG = timestamp() - tEG;
 
-    LIKWID_MARKER_STOP ("marker");
+    LIKWID_MARKER_STOP ("resolveSL");
 
 
     // Imprime coeficientes
-    for (int i = 0; i < n; ++i)
-        printf("%1.15e ", alpha[i]);
-    puts("");
+    //for (int i = 0; i < n; ++i)
+    //    printf("%1.15e ", alpha[i]);
+    //puts("");
 
     // Imprime resíduos
-    for (long long int i = 0; i < p; ++i)
-        printf("%1.15e ", fabs(y[i] - P(x[i],N,alpha)) );
-    puts("");
+    //for (long long int i = 0; i < p; ++i)
+    //    printf("%1.15e ", fabs(y[i] - P(x[i],N,alpha)) );
+    //puts("");
 
     // Imprime os tempos
     printf("%lld %1.10e %1.10e\n", K, tSL, tEG);

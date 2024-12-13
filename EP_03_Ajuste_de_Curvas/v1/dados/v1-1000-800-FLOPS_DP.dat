@@ -1,0 +1,59 @@
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.41 GHz
+--------------------------------------------------------------------------------
+800 1.3458017469e+04 1.0838568199e+02
+--------------------------------------------------------------------------------
+STRUCT,Info,3
+CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
+CPU type:,Intel Coffeelake processor,
+CPU clock:,3.407986403 GHz,
+TABLE,Region montaSL,Group 1 Raw,FLOPS_DP,6
+Region Info,Core 3,
+RDTSC Runtime [s],13.458220,
+call count,1,
+Event,Counter,Core 3
+INSTR_RETIRED_ANY,FIXC0,115512400000
+CPU_CLK_UNHALTED_CORE,FIXC1,50711340000
+CPU_CLK_UNHALTED_REF,FIXC2,45645240000
+FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE,PMC0,0
+FP_ARITH_INST_RETIRED_SCALAR_DOUBLE,PMC1,45426080000
+FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE,PMC2,0
+TABLE,Region montaSL,Group 1 Metric,FLOPS_DP,9
+Metric,Core 3,
+Runtime (RDTSC) [s],13.4582,
+Runtime unhalted [s],14.8801,
+Clock [MHz],3786.2339,
+CPI,0.4390,
+DP MFLOP/s,3375.3409,
+AVX DP MFLOP/s,0,
+Packed MUOPS/s,0,
+Scalar MUOPS/s,3375.3409,
+Vectorization ratio,0,
+STRUCT,Info,3
+CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
+CPU type:,Intel Coffeelake processor,
+CPU clock:,3.407986403 GHz,
+TABLE,Region resolveSL,Group 1 Raw,FLOPS_DP,6
+Region Info,Core 3,
+RDTSC Runtime [s],0.108388,
+call count,1,
+Event,Counter,Core 3
+INSTR_RETIRED_ANY,FIXC0,528990900
+CPU_CLK_UNHALTED_CORE,FIXC1,407372500
+CPU_CLK_UNHALTED_REF,FIXC2,366266400
+FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE,PMC0,500500
+FP_ARITH_INST_RETIRED_SCALAR_DOUBLE,PMC1,3003518
+FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE,PMC2,166541500
+TABLE,Region resolveSL,Group 1 Metric,FLOPS_DP,9
+Metric,Core 3,
+Runtime (RDTSC) [s],0.1084,
+Runtime unhalted [s],0.1195,
+Clock [MHz],3790.4649,
+CPI,0.7701,
+DP MFLOP/s,6183.0864,
+AVX DP MFLOP/s,6146.1402,
+Packed MUOPS/s,1541.1527,
+Scalar MUOPS/s,27.7109,
+Vectorization ratio,98.2337,
