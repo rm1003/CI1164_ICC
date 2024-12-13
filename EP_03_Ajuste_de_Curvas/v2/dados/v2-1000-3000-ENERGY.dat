@@ -1,0 +1,71 @@
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.41 GHz
+--------------------------------------------------------------------------------
+3000 1.0664459997e+02 1.0791484296e+02
+--------------------------------------------------------------------------------
+STRUCT,Info,3
+CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
+CPU type:,Intel Coffeelake processor,
+CPU clock:,3.407980627 GHz,
+TABLE,Region montaSL,Group 1 Raw,ENERGY,8
+Region Info,Core 3,
+RDTSC Runtime [s],0.106649,
+call count,1,
+Event,Counter,Core 3
+INSTR_RETIRED_ANY,FIXC0,866727400
+CPU_CLK_UNHALTED_CORE,FIXC1,388161600
+CPU_CLK_UNHALTED_REF,FIXC2,356603500
+TEMP_CORE,TMP0,203
+PWR_PKG_ENERGY,PWR0,0.8950
+PWR_PP0_ENERGY,PWR1,0.8712
+PWR_PP1_ENERGY,PWR2,0
+PWR_DRAM_ENERGY,PWR3,0.0544
+TABLE,Region montaSL,Group 1 Metric,ENERGY,13
+Metric,Core 3,
+Runtime (RDTSC) [s],0.1066,
+Runtime unhalted [s],0.1139,
+Clock [MHz],3709.5744,
+CPI,0.4478,
+Temperature [C],203,
+Energy [J],0.8950,
+Power [W],8.3922,
+Energy PP0 [J],0.8712,
+Power PP0 [W],8.1690,
+Energy PP1 [J],0,
+Power PP1 [W],0,
+Energy DRAM [J],0.0544,
+Power DRAM [W],0.5099,
+STRUCT,Info,3
+CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
+CPU type:,Intel Coffeelake processor,
+CPU clock:,3.407980627 GHz,
+TABLE,Region resolveSL,Group 1 Raw,ENERGY,8
+Region Info,Core 3,
+RDTSC Runtime [s],0.107917,
+call count,1,
+Event,Counter,Core 3
+INSTR_RETIRED_ANY,FIXC0,529169600
+CPU_CLK_UNHALTED_CORE,FIXC1,405664800
+CPU_CLK_UNHALTED_REF,FIXC2,364715800
+TEMP_CORE,TMP0,205
+PWR_PKG_ENERGY,PWR0,1.3850
+PWR_PP0_ENERGY,PWR1,1.3224
+PWR_PP1_ENERGY,PWR2,0
+PWR_DRAM_ENERGY,PWR3,0.1751
+TABLE,Region resolveSL,Group 1 Metric,ENERGY,13
+Metric,Core 3,
+Runtime (RDTSC) [s],0.1079,
+Runtime unhalted [s],0.1190,
+Clock [MHz],3790.6166,
+CPI,0.7666,
+Temperature [C],205,
+Energy [J],1.3850,
+Power [W],12.8340,
+Energy PP0 [J],1.3224,
+Power PP0 [W],12.2543,
+Energy PP1 [J],0,
+Power PP1 [W],0,
+Energy DRAM [J],0.1751,
+Power DRAM [W],1.6226,

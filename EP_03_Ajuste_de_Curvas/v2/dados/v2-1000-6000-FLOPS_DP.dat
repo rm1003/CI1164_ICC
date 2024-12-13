@@ -1,0 +1,59 @@
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
+CPU type:	Intel Coffeelake processor
+CPU clock:	3.41 GHz
+--------------------------------------------------------------------------------
+6000 2.2079087001e+02 1.0899527103e+02
+--------------------------------------------------------------------------------
+STRUCT,Info,3
+CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
+CPU type:,Intel Coffeelake processor,
+CPU clock:,3.407974999 GHz,
+TABLE,Region montaSL,Group 1 Raw,FLOPS_DP,6
+Region Info,Core 3,
+RDTSC Runtime [s],0.220797,
+call count,1,
+Event,Counter,Core 3
+INSTR_RETIRED_ANY,FIXC0,1732624000
+CPU_CLK_UNHALTED_CORE,FIXC1,773015200
+CPU_CLK_UNHALTED_REF,FIXC2,742709400
+FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE,PMC0,0
+FP_ARITH_INST_RETIRED_SCALAR_DOUBLE,PMC1,692656900
+FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE,PMC2,0
+TABLE,Region montaSL,Group 1 Metric,FLOPS_DP,9
+Metric,Core 3,
+Runtime (RDTSC) [s],0.2208,
+Runtime unhalted [s],0.2268,
+Clock [MHz],3547.0353,
+CPI,0.4462,
+DP MFLOP/s,3137.0743,
+AVX DP MFLOP/s,0,
+Packed MUOPS/s,0,
+Scalar MUOPS/s,3137.0743,
+Vectorization ratio,0,
+STRUCT,Info,3
+CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
+CPU type:,Intel Coffeelake processor,
+CPU clock:,3.407974999 GHz,
+TABLE,Region resolveSL,Group 1 Raw,FLOPS_DP,6
+Region Info,Core 3,
+RDTSC Runtime [s],0.108997,
+call count,1,
+Event,Counter,Core 3
+INSTR_RETIRED_ANY,FIXC0,529168900
+CPU_CLK_UNHALTED_CORE,FIXC1,411282300
+CPU_CLK_UNHALTED_REF,FIXC2,369748800
+FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE,PMC0,504479
+FP_ARITH_INST_RETIRED_SCALAR_DOUBLE,PMC1,2133769
+FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE,PMC2,166757200
+TABLE,Region resolveSL,Group 1 Metric,FLOPS_DP,9
+Metric,Core 3,
+Runtime (RDTSC) [s],0.1090,
+Runtime unhalted [s],0.1207,
+Clock [MHz],3790.7893,
+CPI,0.7772,
+DP MFLOP/s,6148.5037,
+AVX DP MFLOP/s,6119.6706,
+Packed MUOPS/s,1534.5460,
+Scalar MUOPS/s,19.5763,
+Vectorization ratio,98.7404,
