@@ -8,7 +8,7 @@
 #include "utils.h"
 
 #define UNROLL_LINES 4
-#define BLOCKING 4
+#define BLOCKING 64
 /////////////////////////////////////////////////////////////////////////////////////
 //   AJUSTE DE CURVAS
 /////////////////////////////////////////////////////////////////////////////////////
@@ -18,16 +18,24 @@
 void montaSL(double **restrict A, double *restrict b, int n, long long int p, double *restrict x, double *restrict y)
 {
     // Antecipa calculo do pow para reutilização em vez de calcular novamente toda vez
-    // max_power = para valor max na matriz
+    // max_power = para valor max da quantidade de somatorias do SL
     long long int max_power = 2 * n - 1;
+    double vpow = 0.0;
     double *powers = (double *)malloc((max_power) * sizeof(double));
-    for (long long int i = 0; i < max_power; ++i)
+    for (long long int i = 0; i < n; ++i)
+    {
+        b[i] = 0.0;
+        powers[i] = 0.0;
+        for (long long int j = 0; j < p; ++j)
+        {
+            vpow = pow(x[j], i);
+            powers[i] += vpow;
+            b[i] += vpow * y[j];
+        }
+    }
+    for (long long int i = n; i < max_power; ++i)
     {
         powers[i] = 0.0;
-    }
-
-    for (long long int i = 0; i < max_power; ++i)
-    {
         for (long long int j = 0; j < p; ++j)
         {
             powers[i] += pow(x[j], i);
@@ -35,17 +43,8 @@ void montaSL(double **restrict A, double *restrict b, int n, long long int p, do
     }
 
     for (long long int i = 0; i < n; ++i)
-    {
-        b[i] = 0.0;
         for (long long int j = 0; j < n; ++j)
-        {
             A[i][j] = powers[i + j];
-        }
-        for (long long int k = 0; k < p; ++k)
-        {
-            b[i] += pow(x[k], i) * y[k];
-        }
-    }
 }
 
 void eliminacaoGauss(double **restrict A, double *restrict b, int n)
@@ -54,16 +53,17 @@ void eliminacaoGauss(double **restrict A, double *restrict b, int n)
     {
         long long int iMax = i;
         for (long long int k = i + 1; k < n; ++k)
+        {
             if (A[k][i] > A[iMax][i])
                 iMax = k;
+        }
         if (iMax != i)
         {
-            double *tmp, aux;
-            tmp = A[i];
+            double *tmp = A[i];
             A[i] = A[iMax];
             A[iMax] = tmp;
 
-            aux = b[i];
+            double aux = b[i];
             b[i] = b[iMax];
             b[iMax] = aux;
         }
@@ -76,6 +76,7 @@ void eliminacaoGauss(double **restrict A, double *restrict b, int n)
                 A[k][j] -= A[i][j] * m;
             b[k] -= b[i] * m;
         }
+        
     }
 }
 
@@ -83,12 +84,27 @@ void retrossubs(double **restrict A, double *restrict b, double *restrict x, int
 {
     for (long long int i = n - 1; i >= 0; --i)
     {
-        x[i] = b[i];
-        for (long long int j = i + 1; j < n; ++j)
+        double soma = 0.0;
+        long long int j;
+
+        // Unroll com blocos menores que respeitam a dependência de dados
+        for (j = i + 1; j + 3 < n; j += UNROLL_LINES) // Processa 4 elementos por iteração
         {
-            x[i] -= A[i][j] * x[j];
+            soma += A[i][j] * x[j] +
+                    A[i][j + 1] * x[j + 1] +
+                    A[i][j + 2] * x[j + 2] +
+                    A[i][j + 3] * x[j + 3];
         }
-        x[i] /= A[i][i];
+        // Calcula os elementos restantes
+        for (; j < n; ++j)
+        {
+            soma += A[i][j] * x[j];
+        }
+        // for (long long int j = i + 1; j < n; ++j)
+        // {
+        //     soma += A[i][j] * x[j];
+        // }
+        x[i] = (b[i] - soma) / A[i][i];
     }
 }
 
