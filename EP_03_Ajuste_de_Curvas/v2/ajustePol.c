@@ -4,7 +4,6 @@
 #include <fenv.h>
 #include <math.h>
 #include <stdint.h>
-#include <string.h>
 
 #include "utils.h"
 
@@ -13,46 +12,41 @@
 //   AJUSTE DE CURVAS
 /////////////////////////////////////////////////////////////////////////////////////
 
+// OK
 // Add restrict para poder distinguir as matrizes
-
-void montaSL(double **restrict A, double *restrict b, int n, long long int p, double *restrict x, double *restrict y)
-{       
-    long long int sumIJ = 0, j = 0;
-
+void montaSL(double **restrict A, double *restrict b, int n, long long int p, double *restrict x, double *restrict y) {       
     // Antecipa calculo do pow para reutilização em vez de calcular novamente toda vez
     // max_power = para valor max na matriz
     long long int max_power = 2 * n - 1;
     double *powers = (double*) malloc((max_power) * sizeof(double));
-    memset(powers, 1.0, max_power);
+    for (long long int i = 0; i < max_power; ++i) {
+        powers[i] = 0.0;
+    }
 
-    for (long long i = 0; i < max_power; ++i) {
+    for (long long int i = 0; i < max_power; ++i) {
         for (long long int j = 0; j < p; ++j) {
             powers[i] += pow(x[j], i);
         }
     }
 
     for (long long int i = 0; i < n; ++i) {
-        for (long long int j = 0; j < n; ++j)
-        {
-            sumIJ = i + j;
-            A[i][j] = powers[sumIJ];
-        }
-    }
-
-    for (long long int i = 0; i < n; ++i)
-    {
         b[i] = 0.0;
-        for (long long int k = 0; k < p; ++k)
+        for (long long int j = 0; j < n; ++j) {
+            A[i][j] = powers[i + j];
+        }
+        for (long long int k = 0; k < p; ++k) {
             b[i] += pow(x[k], i) * y[k];
+        }
     }
 }
 
+
 void eliminacaoGauss(double **restrict A, double *restrict b, int n)
 {
-    for (int i = 0; i < n; ++i)
+    for (long long int i = 0; i < n; ++i)
     {
-        int iMax = i;
-        for (int k = i + 1; k < n; ++k)
+        long long int iMax = i;
+        for (long long int k = i + 1; k < n; ++k)
             if (A[k][i] > A[iMax][i])
                 iMax = k;
         if (iMax != i)
@@ -67,7 +61,7 @@ void eliminacaoGauss(double **restrict A, double *restrict b, int n)
             b[iMax] = aux;
         }
 
-        for (int k = i + 1; k < n; ++k)
+        for (long long int k = i + 1; k < n; ++k)
         {
             double m = A[k][i] / A[i][i];
             A[k][i] = 0.0;
@@ -78,13 +72,13 @@ void eliminacaoGauss(double **restrict A, double *restrict b, int n)
     }
 }
 
-void retrossubs(double **restrict A, double *restrict b, double *restrict x, int n)
-{
-    for (int i = n - 1; i >= 0; --i)
-    {
+void retrossubs(double **restrict A, double *restrict b, double *restrict x, int n) {
+
+    for (int i = n - 1; i >= 0; --i) {
         x[i] = b[i];
-        for (int j = i + 1; j < n; ++j)
+        for (int j = i + 1; j < n; ++j) {
             x[i] -= A[i][j] * x[j];
+        }
         x[i] /= A[i][i];
     }
 }
