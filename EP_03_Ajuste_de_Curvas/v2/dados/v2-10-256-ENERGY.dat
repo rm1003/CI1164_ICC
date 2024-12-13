@@ -3,68 +3,68 @@ CPU name:	Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
 CPU type:	Intel Coffeelake processor
 CPU clock:	3.41 GHz
 --------------------------------------------------------------------------------
-256 2.5738096237e-01 3.3750534058e-03
+256 9.8951041698e-02 1.2120008469e-03
 --------------------------------------------------------------------------------
 STRUCT,Info,3
 CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
 CPU type:,Intel Coffeelake processor,
-CPU clock:,3.407956355 GHz,
+CPU clock:,3.40794523 GHz,
 TABLE,Region montaSL,Group 1 Raw,ENERGY,8
 Region Info,Core 3,
-RDTSC Runtime [s],0.000260,
+RDTSC Runtime [s],0.000100,
 call count,1,
 Event,Counter,Core 3
 INSTR_RETIRED_ANY,FIXC0,723966
-CPU_CLK_UNHALTED_CORE,FIXC1,354729
-CPU_CLK_UNHALTED_REF,FIXC2,865064
-TEMP_CORE,TMP0,194
-PWR_PKG_ENERGY,PWR0,0.0020
-PWR_PP0_ENERGY,PWR1,0.0010
+CPU_CLK_UNHALTED_CORE,FIXC1,358578
+CPU_CLK_UNHALTED_REF,FIXC2,331002
+TEMP_CORE,TMP0,191
+PWR_PKG_ENERGY,PWR0,0
+PWR_PP0_ENERGY,PWR1,0.0016
 PWR_PP1_ENERGY,PWR2,0
-PWR_DRAM_ENERGY,PWR3,0.0005
+PWR_DRAM_ENERGY,PWR3,0
 TABLE,Region montaSL,Group 1 Metric,ENERGY,13
 Metric,Core 3,
-Runtime (RDTSC) [s],0.0003,
+Runtime (RDTSC) [s],0.0001,
 Runtime unhalted [s],0.0001,
-Clock [MHz],1397.4700,
-CPI,0.4900,
-Temperature [C],194,
-Energy [J],0.0020,
-Power [W],7.7467,
-Energy PP0 [J],0.0010,
-Power PP0 [W],3.7560,
+Clock [MHz],3691.8634,
+CPI,0.4953,
+Temperature [C],191,
+Energy [J],0,
+Power [W],0,
+Energy PP0 [J],0.0016,
+Power PP0 [W],16.4503,
 Energy PP1 [J],0,
 Power PP1 [W],0,
-Energy DRAM [J],0.0005,
-Power DRAM [W],2.1127,
+Energy DRAM [J],0,
+Power DRAM [W],0,
 STRUCT,Info,3
 CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
 CPU type:,Intel Coffeelake processor,
-CPU clock:,3.407956355 GHz,
+CPU clock:,3.40794523 GHz,
 TABLE,Region resolveSL,Group 1 Raw,ENERGY,8
 Region Info,Core 3,
-RDTSC Runtime [s],0.000004,
+RDTSC Runtime [s],0.000001,
 call count,1,
 Event,Counter,Core 3
 INSTR_RETIRED_ANY,FIXC0,9068
-CPU_CLK_UNHALTED_CORE,FIXC1,15202
-CPU_CLK_UNHALTED_REF,FIXC2,37062
-TEMP_CORE,TMP0,194
+CPU_CLK_UNHALTED_CORE,FIXC1,14297
+CPU_CLK_UNHALTED_REF,FIXC2,13632
+TEMP_CORE,TMP0,191
 PWR_PKG_ENERGY,PWR0,0
-PWR_PP0_ENERGY,PWR1,0.0010
+PWR_PP0_ENERGY,PWR1,0.0011
 PWR_PP1_ENERGY,PWR2,0
 PWR_DRAM_ENERGY,PWR3,0
 TABLE,Region resolveSL,Group 1 Metric,ENERGY,13
 Metric,Core 3,
-Runtime (RDTSC) [s],3.742985e-06,
-Runtime unhalted [s],4.460738e-06,
-Clock [MHz],1397.8672,
-CPI,1.6764,
-Temperature [C],194,
+Runtime (RDTSC) [s],1.342729e-06,
+Runtime unhalted [s],4.195197e-06,
+Clock [MHz],3574.1926,
+CPI,1.5766,
+Temperature [C],191,
 Energy [J],0,
 Power [W],0,
-Energy PP0 [J],0.0010,
-Power PP0 [W],277.2114,
+Energy PP0 [J],0.0011,
+Power PP0 [W],818.2090,
 Energy PP1 [J],0,
 Power PP1 [W],0,
 Energy DRAM [J],0,

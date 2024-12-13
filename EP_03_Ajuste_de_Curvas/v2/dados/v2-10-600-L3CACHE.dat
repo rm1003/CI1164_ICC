@@ -3,53 +3,53 @@ CPU name:	Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
 CPU type:	Intel Coffeelake processor
 CPU clock:	3.41 GHz
 --------------------------------------------------------------------------------
-600 2.1757000685e-01 1.4629960060e-03
+600 2.1874296665e-01 1.2320280075e-03
 --------------------------------------------------------------------------------
 STRUCT,Info,3
 CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
 CPU type:,Intel Coffeelake processor,
-CPU clock:,3.407972357 GHz,
+CPU clock:,3.407987907 GHz,
 TABLE,Region montaSL,Group 1 Raw,L3CACHE,6
 Region Info,Core 3,
-RDTSC Runtime [s],0.000219,
+RDTSC Runtime [s],0.000220,
 call count,1,
 Event,Counter,Core 3
 INSTR_RETIRED_ANY,FIXC0,1683855
-CPU_CLK_UNHALTED_CORE,FIXC1,793949
-CPU_CLK_UNHALTED_REF,FIXC2,733004
-MEM_LOAD_RETIRED_L3_HIT,PMC0,88
-MEM_LOAD_RETIRED_L3_MISS,PMC1,51
-UOPS_RETIRED_ALL,PMC2,2031966
+CPU_CLK_UNHALTED_CORE,FIXC1,799308
+CPU_CLK_UNHALTED_REF,FIXC2,737974
+MEM_LOAD_RETIRED_L3_HIT,PMC0,96
+MEM_LOAD_RETIRED_L3_MISS,PMC1,57
+UOPS_RETIRED_ALL,PMC2,2031905
 TABLE,Region montaSL,Group 1 Metric,L3CACHE,7
 Metric,Core 3,
 Runtime (RDTSC) [s],0.0002,
 Runtime unhalted [s],0.0002,
-Clock [MHz],3691.3253,
-CPI,0.4715,
+Clock [MHz],3691.2303,
+CPI,0.4747,
 L3 request rate,0.0001,
-L3 miss rate,2.509885e-05,
-L3 miss ratio,0.3669,
+L3 miss rate,2.805249e-05,
+L3 miss ratio,0.3725,
 STRUCT,Info,3
 CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
 CPU type:,Intel Coffeelake processor,
-CPU clock:,3.407972357 GHz,
+CPU clock:,3.407987907 GHz,
 TABLE,Region resolveSL,Group 1 Raw,L3CACHE,6
 Region Info,Core 3,
-RDTSC Runtime [s],0.000002,
+RDTSC Runtime [s],0.000001,
 call count,1,
 Event,Counter,Core 3
 INSTR_RETIRED_ANY,FIXC0,8750
-CPU_CLK_UNHALTED_CORE,FIXC1,14410
-CPU_CLK_UNHALTED_REF,FIXC2,13206
-MEM_LOAD_RETIRED_L3_HIT,PMC0,44
+CPU_CLK_UNHALTED_CORE,FIXC1,13428
+CPU_CLK_UNHALTED_REF,FIXC2,12638
+MEM_LOAD_RETIRED_L3_HIT,PMC0,38
 MEM_LOAD_RETIRED_L3_MISS,PMC1,2
-UOPS_RETIRED_ALL,PMC2,10987
+UOPS_RETIRED_ALL,PMC2,10986
 TABLE,Region resolveSL,Group 1 Metric,L3CACHE,7
 Metric,Core 3,
-Runtime (RDTSC) [s],1.596840e-06,
-Runtime unhalted [s],4.228321e-06,
-Clock [MHz],3718.6795,
-CPI,1.6469,
-L3 request rate,0.0042,
+Runtime (RDTSC) [s],1.348012e-06,
+Runtime unhalted [s],3.940155e-06,
+Clock [MHz],3621.0209,
+CPI,1.5346,
+L3 request rate,0.0036,
 L3 miss rate,0.0002,
-L3 miss ratio,0.0435,
+L3 miss ratio,0.0500,

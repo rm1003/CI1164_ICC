@@ -3,20 +3,20 @@ CPU name:	Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
 CPU type:	Intel Coffeelake processor
 CPU clock:	3.41 GHz
 --------------------------------------------------------------------------------
-256 9.6636056900e-02 1.1230111122e-03
+256 9.8979055882e-02 1.3110041618e-03
 --------------------------------------------------------------------------------
 STRUCT,Info,3
 CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
 CPU type:,Intel Coffeelake processor,
-CPU clock:,3.407978666 GHz,
+CPU clock:,3.407987119 GHz,
 TABLE,Region montaSL,Group 1 Raw,FLOPS_DP,6
 Region Info,Core 3,
-RDTSC Runtime [s],0.000098,
+RDTSC Runtime [s],0.000100,
 call count,1,
 Event,Counter,Core 3
 INSTR_RETIRED_ANY,FIXC0,723014
-CPU_CLK_UNHALTED_CORE,FIXC1,359085
-CPU_CLK_UNHALTED_REF,FIXC2,322624
+CPU_CLK_UNHALTED_CORE,FIXC1,357234
+CPU_CLK_UNHALTED_REF,FIXC2,329298
 FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE,PMC0,0
 FP_ARITH_INST_RETIRED_SCALAR_DOUBLE,PMC1,323345
 FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE,PMC2,0
@@ -24,36 +24,36 @@ TABLE,Region montaSL,Group 1 Metric,FLOPS_DP,9
 Metric,Core 3,
 Runtime (RDTSC) [s],0.0001,
 Runtime unhalted [s],0.0001,
-Clock [MHz],3793.1277,
-CPI,0.4967,
-DP MFLOP/s,3308.6568,
+Clock [MHz],3697.1037,
+CPI,0.4941,
+DP MFLOP/s,3227.4308,
 AVX DP MFLOP/s,0,
 Packed MUOPS/s,0,
-Scalar MUOPS/s,3308.6568,
+Scalar MUOPS/s,3227.4308,
 Vectorization ratio,0,
 STRUCT,Info,3
 CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
 CPU type:,Intel Coffeelake processor,
-CPU clock:,3.407978666 GHz,
+CPU clock:,3.407987119 GHz,
 TABLE,Region resolveSL,Group 1 Raw,FLOPS_DP,6
 Region Info,Core 3,
 RDTSC Runtime [s],0.000001,
 call count,1,
 Event,Counter,Core 3
 INSTR_RETIRED_ANY,FIXC0,8750
-CPU_CLK_UNHALTED_CORE,FIXC1,13561
-CPU_CLK_UNHALTED_REF,FIXC2,12212
+CPU_CLK_UNHALTED_CORE,FIXC1,13897
+CPU_CLK_UNHALTED_REF,FIXC2,13206
 FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE,PMC0,82
 FP_ARITH_INST_RETIRED_SCALAR_DOUBLE,PMC1,312
 FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE,PMC2,152
 TABLE,Region resolveSL,Group 1 Metric,FLOPS_DP,9
 Metric,Core 3,
-Runtime (RDTSC) [s],1.298730e-06,
-Runtime unhalted [s],3.979192e-06,
-Clock [MHz],3784.4414,
-CPI,1.5498,
-DP MFLOP/s,834.6616,
-AVX DP MFLOP/s,468.1497,
-Packed MUOPS/s,180.1760,
-Scalar MUOPS/s,240.2347,
+Runtime (RDTSC) [s],1.454818e-06,
+Runtime unhalted [s],4.077774e-06,
+Clock [MHz],3586.3090,
+CPI,1.5882,
+DP MFLOP/s,745.1104,
+AVX DP MFLOP/s,417.9217,
+Packed MUOPS/s,160.8449,
+Scalar MUOPS/s,214.4598,
 Vectorization ratio,42.8571,

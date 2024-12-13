@@ -15,7 +15,7 @@ for k in "${KPONTOS[@]}"; do
         ./gera_entrada "$k" "$g" | ./ajustePol >> "$base_dir/v2-tempo.dat"
         for m in "${METRICAS[@]}"; do
             echo "Executando com Kpontos=$k e GrauPol=$g..."
-            touch "$base_dir/v1-$g-$k-$m.dat"
+            touch "$base_dir/v2-$g-$k-$m.dat"
             ./gera_entrada "$k" "$g" | likwid-perfctr -O -C 3 -g "$m" -m ./ajustePol > "$base_dir/v2-$g-$k-$m.dat"
         done
     done

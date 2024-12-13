@@ -3,57 +3,57 @@ CPU name:	Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
 CPU type:	Intel Coffeelake processor
 CPU clock:	3.41 GHz
 --------------------------------------------------------------------------------
-200 7.9266011715e-02 1.1990070343e-03
+200 2.0604997873e-01 3.3779740334e-03
 --------------------------------------------------------------------------------
 STRUCT,Info,3
 CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
 CPU type:,Intel Coffeelake processor,
-CPU clock:,3.407922304 GHz,
+CPU clock:,3.407967296 GHz,
 TABLE,Region montaSL,Group 1 Raw,FLOPS_DP,6
 Region Info,Core 3,
-RDTSC Runtime [s],0.000080,
+RDTSC Runtime [s],0.000209,
 call count,1,
 Event,Counter,Core 3
 INSTR_RETIRED_ANY,FIXC0,566521
-CPU_CLK_UNHALTED_CORE,FIXC1,284029
-CPU_CLK_UNHALTED_REF,FIXC2,262558
+CPU_CLK_UNHALTED_CORE,FIXC1,281834
+CPU_CLK_UNHALTED_REF,FIXC2,686854
 FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE,PMC0,0
 FP_ARITH_INST_RETIRED_SCALAR_DOUBLE,PMC1,252617
 FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE,PMC2,0
 TABLE,Region montaSL,Group 1 Metric,FLOPS_DP,9
 Metric,Core 3,
-Runtime (RDTSC) [s],0.0001,
+Runtime (RDTSC) [s],0.0002,
 Runtime unhalted [s],0.0001,
-Clock [MHz],3686.6093,
-CPI,0.5014,
-DP MFLOP/s,3140.2804,
+Clock [MHz],1398.3773,
+CPI,0.4975,
+DP MFLOP/s,1207.3109,
 AVX DP MFLOP/s,0,
 Packed MUOPS/s,0,
-Scalar MUOPS/s,3140.2804,
+Scalar MUOPS/s,1207.3109,
 Vectorization ratio,0,
 STRUCT,Info,3
 CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
 CPU type:,Intel Coffeelake processor,
-CPU clock:,3.407922304 GHz,
+CPU clock:,3.407967296 GHz,
 TABLE,Region resolveSL,Group 1 Raw,FLOPS_DP,6
 Region Info,Core 3,
-RDTSC Runtime [s],0.000001,
+RDTSC Runtime [s],0.000004,
 call count,1,
 Event,Counter,Core 3
 INSTR_RETIRED_ANY,FIXC0,8752
-CPU_CLK_UNHALTED_CORE,FIXC1,14303
-CPU_CLK_UNHALTED_REF,FIXC2,12922
+CPU_CLK_UNHALTED_CORE,FIXC1,15103
+CPU_CLK_UNHALTED_REF,FIXC2,36636
 FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE,PMC0,82
 FP_ARITH_INST_RETIRED_SCALAR_DOUBLE,PMC1,312
 FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE,PMC2,152
 TABLE,Region resolveSL,Group 1 Metric,FLOPS_DP,9
 Metric,Core 3,
-Runtime (RDTSC) [s],1.333927e-06,
-Runtime unhalted [s],4.196985e-06,
-Clock [MHz],3772.1338,
-CPI,1.6343,
-DP MFLOP/s,812.6382,
-AVX DP MFLOP/s,455.7971,
-Packed MUOPS/s,175.4219,
-Scalar MUOPS/s,233.8959,
+Runtime (RDTSC) [s],3.886758e-06,
+Runtime unhalted [s],4.431674e-06,
+Clock [MHz],1404.9168,
+CPI,1.7257,
+DP MFLOP/s,278.8957,
+AVX DP MFLOP/s,156.4286,
+Packed MUOPS/s,60.2044,
+Scalar MUOPS/s,80.2726,
 Vectorization ratio,42.8571,

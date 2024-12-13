@@ -3,53 +3,53 @@ CPU name:	Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
 CPU type:	Intel Coffeelake processor
 CPU clock:	3.41 GHz
 --------------------------------------------------------------------------------
-800 3.1650599003e+01 1.0981115401e+02
+800 4.4282693982e+01 1.1069844401e+02
 --------------------------------------------------------------------------------
 STRUCT,Info,3
 CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
 CPU type:,Intel Coffeelake processor,
-CPU clock:,3.407936654 GHz,
+CPU clock:,3.407983621 GHz,
 TABLE,Region montaSL,Group 1 Raw,L3CACHE,6
 Region Info,Core 3,
-RDTSC Runtime [s],0.031654,
+RDTSC Runtime [s],0.044295,
 call count,1,
 Event,Counter,Core 3
-INSTR_RETIRED_ANY,FIXC0,231733500
-CPU_CLK_UNHALTED_CORE,FIXC1,105726100
-CPU_CLK_UNHALTED_REF,FIXC2,101971800
-MEM_LOAD_RETIRED_L3_HIT,PMC0,516
-MEM_LOAD_RETIRED_L3_MISS,PMC1,124
-UOPS_RETIRED_ALL,PMC2,274542600
+INSTR_RETIRED_ANY,FIXC0,231733600
+CPU_CLK_UNHALTED_CORE,FIXC1,106140800
+CPU_CLK_UNHALTED_REF,FIXC2,145099300
+MEM_LOAD_RETIRED_L3_HIT,PMC0,550
+MEM_LOAD_RETIRED_L3_MISS,PMC1,192
+UOPS_RETIRED_ALL,PMC2,274561400
 TABLE,Region montaSL,Group 1 Metric,L3CACHE,7
 Metric,Core 3,
-Runtime (RDTSC) [s],0.0317,
-Runtime unhalted [s],0.0310,
-Clock [MHz],3533.4068,
-CPI,0.4562,
-L3 request rate,2.331150e-06,
-L3 miss rate,4.516603e-07,
-L3 miss ratio,0.1938,
+Runtime (RDTSC) [s],0.0443,
+Runtime unhalted [s],0.0311,
+Clock [MHz],2492.9556,
+CPI,0.4580,
+L3 request rate,2.702492e-06,
+L3 miss rate,6.992971e-07,
+L3 miss ratio,0.2588,
 STRUCT,Info,3
 CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
 CPU type:,Intel Coffeelake processor,
-CPU clock:,3.407936654 GHz,
+CPU clock:,3.407983621 GHz,
 TABLE,Region resolveSL,Group 1 Raw,L3CACHE,6
 Region Info,Core 3,
-RDTSC Runtime [s],0.109813,
+RDTSC Runtime [s],0.110720,
 call count,1,
 Event,Counter,Core 3
 INSTR_RETIRED_ANY,FIXC0,529169700
-CPU_CLK_UNHALTED_CORE,FIXC1,414367200
-CPU_CLK_UNHALTED_REF,FIXC2,372514400
-MEM_LOAD_RETIRED_L3_HIT,PMC0,5934659
-MEM_LOAD_RETIRED_L3_MISS,PMC1,1314021
-UOPS_RETIRED_ALL,PMC2,613769200
+CPU_CLK_UNHALTED_CORE,FIXC1,415030900
+CPU_CLK_UNHALTED_REF,FIXC2,375095600
+MEM_LOAD_RETIRED_L3_HIT,PMC0,5937129
+MEM_LOAD_RETIRED_L3_MISS,PMC1,1349756
+UOPS_RETIRED_ALL,PMC2,613818000
 TABLE,Region resolveSL,Group 1 Metric,L3CACHE,7
 Metric,Core 3,
-Runtime (RDTSC) [s],0.1098,
-Runtime unhalted [s],0.1216,
-Clock [MHz],3790.8257,
-CPI,0.7831,
-L3 request rate,0.0118,
-L3 miss rate,0.0021,
-L3 miss ratio,0.1813,
+Runtime (RDTSC) [s],0.1107,
+Runtime unhalted [s],0.1218,
+Clock [MHz],3770.8214,
+CPI,0.7843,
+L3 request rate,0.0119,
+L3 miss rate,0.0022,
+L3 miss ratio,0.1852,

@@ -3,57 +3,57 @@ CPU name:	Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
 CPU type:	Intel Coffeelake processor
 CPU clock:	3.41 GHz
 --------------------------------------------------------------------------------
-2000 1.6974949837e+00 2.8719902039e-03
+2000 1.8450910449e+00 3.6349892616e-03
 --------------------------------------------------------------------------------
 STRUCT,Info,3
 CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
 CPU type:,Intel Coffeelake processor,
-CPU clock:,3.407976049 GHz,
+CPU clock:,3.407974043 GHz,
 TABLE,Region montaSL,Group 1 Raw,FLOPS_DP,6
 Region Info,Core 3,
-RDTSC Runtime [s],0.001700,
+RDTSC Runtime [s],0.001848,
 call count,1,
 Event,Counter,Core 3
-INSTR_RETIRED_ANY,FIXC0,5595455
-CPU_CLK_UNHALTED_CORE,FIXC1,2574408
-CPU_CLK_UNHALTED_REF,FIXC2,5726008
+INSTR_RETIRED_ANY,FIXC0,5595457
+CPU_CLK_UNHALTED_CORE,FIXC1,2585132
+CPU_CLK_UNHALTED_REF,FIXC2,6187082
 FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE,PMC0,0
 FP_ARITH_INST_RETIRED_SCALAR_DOUBLE,PMC1,2526017
 FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE,PMC2,0
 TABLE,Region montaSL,Group 1 Metric,FLOPS_DP,9
 Metric,Core 3,
-Runtime (RDTSC) [s],0.0017,
+Runtime (RDTSC) [s],0.0018,
 Runtime unhalted [s],0.0008,
-Clock [MHz],1532.2229,
-CPI,0.4601,
-DP MFLOP/s,1485.8932,
+Clock [MHz],1423.9447,
+CPI,0.4620,
+DP MFLOP/s,1366.6912,
 AVX DP MFLOP/s,0,
 Packed MUOPS/s,0,
-Scalar MUOPS/s,1485.8932,
+Scalar MUOPS/s,1366.6912,
 Vectorization ratio,0,
 STRUCT,Info,3
 CPU name:,Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz,
 CPU type:,Intel Coffeelake processor,
-CPU clock:,3.407976049 GHz,
+CPU clock:,3.407974043 GHz,
 TABLE,Region resolveSL,Group 1 Raw,FLOPS_DP,6
 Region Info,Core 3,
-RDTSC Runtime [s],0.000003,
+RDTSC Runtime [s],0.000004,
 call count,1,
 Event,Counter,Core 3
 INSTR_RETIRED_ANY,FIXC0,8750
-CPU_CLK_UNHALTED_CORE,FIXC1,13677
-CPU_CLK_UNHALTED_REF,FIXC2,31382
+CPU_CLK_UNHALTED_CORE,FIXC1,14585
+CPU_CLK_UNHALTED_REF,FIXC2,33086
 FP_ARITH_INST_RETIRED_128B_PACKED_DOUBLE,PMC0,82
 FP_ARITH_INST_RETIRED_SCALAR_DOUBLE,PMC1,312
 FP_ARITH_INST_RETIRED_256B_PACKED_DOUBLE,PMC2,152
 TABLE,Region resolveSL,Group 1 Metric,FLOPS_DP,9
 Metric,Core 3,
-Runtime (RDTSC) [s],3.235940e-06,
-Runtime unhalted [s],4.013232e-06,
-Clock [MHz],1485.2746,
-CPI,1.5631,
-DP MFLOP/s,334.9877,
-AVX DP MFLOP/s,187.8898,
-Packed MUOPS/s,72.3128,
-Scalar MUOPS/s,96.4171,
+Runtime (RDTSC) [s],4.031716e-06,
+Runtime unhalted [s],4.279669e-06,
+Clock [MHz],1502.3062,
+CPI,1.6669,
+DP MFLOP/s,268.8681,
+AVX DP MFLOP/s,150.8043,
+Packed MUOPS/s,58.0398,
+Scalar MUOPS/s,77.3864,
 Vectorization ratio,42.8571,
