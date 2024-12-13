@@ -4,7 +4,7 @@
 #include <fenv.h>
 #include <math.h>
 #include <stdint.h>
-
+#include <likwid.h>
 #include "utils.h"
 
 #define UNROLL_LINES 4
@@ -141,16 +141,27 @@ int main()
     double *b = (double *)malloc(sizeof(double) * n);
     double *alpha = (double *)malloc(sizeof(double) * n); // coeficientes ajuste
 
+    LIKWID_MARKER_INIT;
+    LIKWID_MARKER_START("montaSL");
+
     // (A) Gera SL
     double tSL = timestamp();
     montaSL(A, b, n, p, x, y);
     tSL = timestamp() - tSL;
+
+    LIKWID_MARKER_STOP("montaSL");
+
+    LIKWID_MARKER_START("resolveSL");
 
     // (B) Resolve SL
     double tEG = timestamp();
     eliminacaoGauss(A, b, n);
     retrossubs(A, b, alpha, n);
     tEG = timestamp() - tEG;
+
+    LIKWID_MARKER_STOP("resolveSL");
+
+    LIKWID_MARKER_CLOSE;
 
     // Imprime coeficientes
     for (int i = 0; i < n; ++i)
