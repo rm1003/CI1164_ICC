@@ -1,0 +1,104 @@
+Mudanças feitas:
+
+-> Foi feito mudança na função montaSL, na qual foi feito um cálculo das somatórias
+antecipado para serem reutilizados na hora de montar o sistema linear e junto já
+aproveita e cálcula o outro lado do sistema linear, reaproveitando o cálculo da potencia.
+Pelo Método dos Mínimos Quadrados estudado na aula, é possível notar que as somatórias elas se
+repetem em muitas partes no sistema. Assim foi feito um loop antes de poder montar
+o sistema linear, entretanto, otimizou bastante a montaSL comparado com a versão 
+original
+
+-> Foi feito mudança no retrossubs fazendo um mini UNROLL de 4 linhas na hora de soma
+os x's já calculados, mas fica notável que não teve muito ganho de desempenho.
+
+
+Gráficos:
+
+-> Gráfico Comparação de Tempo montaSL:
+    É possível reparar que no gráfico a comparação padrão sem considerar com likwid
+a versão V2 (otimizada) sai com muito mais vantagem, ou seja, é bem mais rápido que
+V1.
+
+-> Gráfico Comparação de Tempo solucaoSl:
+    É notável que não teve ganho nem perda entre V1 e V2 após otimização no retrossub.
+
+-> Gráfico ENERGY montaSL:
+    É notável que o gasto de energia é de acordo com quantidade de tempo usado para 
+resolver o problema em geral, sendo assim para N igual a 1000 é notável que teve muito
+gasto de energia
+
+-> Gráfico ENERGY resolveSL:
+    Esse gráfico mostra as mesmas estatisticas do gráfico ENERGY montaSL
+
+-> Gráfico FLOPS_DP montaSL:
+    É notável que teve um ganho em relação aos operações de ponto flutuante, a linha verde
+"linear" representa V1 com N igual a 1000, e a linha azul representa V2 com N igual a 1000
+é possível ver que no início quando a quantidade de pontos (kPontos) não chega a ser grande
+a versão V2 ganha e isso vai sendo aproximado a V1 quando kPontos é maior.
+
+-> Gráfico FLOPS_DP resolveSL:
+    Como não teve otimização no código, são as mesmas linhas apresentados no gráfico de montaSL.
+
+-> Gráfico L3CACHE montaSL e solucaoSL:
+    É notável que a versão otimizada (V2 azul) quando mais kPontos, possui menos cache miss, ou
+seja, chega a ser perto da versão V1 (vermelho) com N igual a 10, assim é possivel concluir que
+tem menos cache miss na versão otimizada, na qual teve melhor utilização da cache.
+
+
+
+Arquitetura do computador usado para teste:
+
+likwid-topology -g -c
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
+CPU type:	Intel Coffeelake processor
+CPU stepping:	9
+********************************************************************************
+Cache Topology
+********************************************************************************
+Level:			1
+Size:			32 kB
+Type:			Data cache
+Associativity:		8
+Number of sets:		64
+Cache line size:	64
+Cache type:		Non Inclusive
+Shared by threads:	1
+Cache groups:		( 0 ) ( 1 ) ( 2 ) ( 3 )
+--------------------------------------------------------------------------------
+Level:			2
+Size:			256 kB
+Type:			Unified cache
+Associativity:		4
+Number of sets:		1024
+Cache line size:	64
+Cache type:		Non Inclusive
+Shared by threads:	1
+Cache groups:		( 0 ) ( 1 ) ( 2 ) ( 3 )
+--------------------------------------------------------------------------------
+Level:			3
+Size:			6 MB
+Type:			Unified cache
+Associativity:		12
+Number of sets:		8192
+Cache line size:	64
+Cache type:		Inclusive
+Shared by threads:	4
+Cache groups:		( 0 1 2 3 )
+--------------------------------------------------------------------------------
+
+A máquina usada para teste é a máquina H9 do laboratório 12.
+
+
+
+Scripts:
+Obs: é necessário compilar gera_entrada e ajustePolV1 ou ajustePolV2 antes
+
+-> gerador_dadosV1.sh:
+    Gera os dados do Likwid da versão V1.
+-> gerador_dadosV2.sh:
+    Gera os dados do Likwid da versão V2.
+-> datParaCsv.sh:
+    Como os arquivos gerados são .dat, eles são colocados em .csv.
+-> gera_grafico.py:
+    Usado para gerar todos os gráficos.
